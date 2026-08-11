@@ -1584,3 +1584,984 @@ color:#8A8A8A;
 font-size:.95rem;
 
 }
+
+/* =========================================================
+   AVIN .AI — RESPONSIVE WEBSITE UPGRADE
+   Desktop + Tablet + Mobile
+   Paste this at the VERY BOTTOM of style.css
+========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL RESPONSIVE IMPROVEMENTS
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   2. DESKTOP — LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1201px) {
+
+    .hero {
+        min-height: 90vh;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .hero h1 {
+        font-size: clamp(4rem, 6vw, 7rem);
+        line-height: 0.95;
+    }
+
+    .heroText {
+        max-width: 650px;
+    }
+
+    #work,
+    #services,
+    #process,
+    #about,
+    #contact {
+        max-width: 1500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .featuredProject {
+        min-height: 650px;
+    }
+
+    .projectCard {
+        min-height: 300px;
+    }
+
+    .sectionHeading {
+        max-width: 850px;
+    }
+
+}
+
+
+/* =========================================================
+   3. DESKTOP NAVIGATION
+========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        background 0.3s ease,
+        padding 0.3s ease,
+        border 0.3s ease;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar img {
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   4. PROJECT IMAGES
+========================================================= */
+
+.featuredProject img,
+.projectCard img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s cubic-bezier(.2,.7,.2,1),
+        filter 0.5s ease;
+}
+
+.featuredProject:hover img,
+.projectCard:hover img {
+
+    transform: scale(1.04);
+
+    filter: brightness(0.78);
+}
+
+
+/* =========================================================
+   5. PROJECT PLAY BUTTON
+========================================================= */
+
+.playButton {
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.92);
+
+    color: #000;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.featuredProject:hover .playButton,
+.projectCard:hover .playButton {
+
+    transform: translate(-50%, -50%) scale(1.12);
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   6. PROJECT CARDS — TOUCH FRIENDLY
+========================================================= */
+
+.featuredProject,
+.projectCard,
+.serviceCard,
+.statCard,
+.timelineItem {
+
+    -webkit-tap-highlight-color: transparent;
+
+    touch-action: manipulation;
+}
+
+
+/* =========================================================
+   7. TABLET
+   769px — 1200px
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero {
+
+        min-height: auto;
+
+        padding:
+            120px
+            6%
+            100px;
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+    .heroContent {
+
+        max-width: 800px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .heroButtons {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+    .heroInfo {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+    .heroVisual {
+
+        max-width: 850px;
+
+        margin:
+            30px
+            auto
+            0;
+
+    }
+
+    .workGrid {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+    .sideProjects {
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+
+    }
+
+    .servicesGrid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .timeline {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .aboutContent {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+    .footerTop {
+
+        grid-template-columns:
+            2fr
+            1fr
+            1fr;
+
+    }
+
+    .sectionHeading h2 {
+
+        font-size: 3rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   8. TABLET PROJECT CARDS
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .featuredProject {
+
+        min-height: 550px;
+
+    }
+
+    .projectCard {
+
+        min-height: 300px;
+
+    }
+
+}
+
+
+/* =========================================================
+   9. MOBILE
+   768px AND BELOW
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* General spacing */
+
+    #work,
+    #services,
+    #process,
+    #about,
+    #contact {
+
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+
+    /* Navigation */
+
+    .navbar {
+
+        padding:
+            16px
+            20px;
+
+    }
+
+    .navbar ul {
+
+        gap: 12px;
+
+    }
+
+    .navbar a {
+
+        font-size: 0.8rem;
+
+    }
+
+
+    /* Hero */
+
+    .hero {
+
+        min-height: auto;
+
+        padding:
+            100px
+            20px
+            70px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .heroContent {
+
+        width: 100%;
+
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                2.8rem,
+                13vw,
+                4.5rem
+            );
+
+        line-height: 0.98;
+
+        letter-spacing: -0.04em;
+
+    }
+
+    .heroText {
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+
+        max-width: 500px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .heroButtons {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+
+    }
+
+    .heroButtons a,
+    .heroButtons button {
+
+        width: 100%;
+
+        min-height: 52px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+    }
+
+    .heroInfo {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        text-align: center;
+
+    }
+
+    .heroVisual {
+
+        width: 100%;
+
+        margin-top: 35px;
+
+    }
+
+
+    /* Section headings */
+
+    .sectionHeading {
+
+        margin-bottom: 40px;
+
+    }
+
+    .sectionHeading p {
+
+        font-size: 0.72rem;
+
+        letter-spacing: 2px;
+
+    }
+
+    .sectionHeading h2 {
+
+        font-size:
+            clamp(
+                2rem,
+                9vw,
+                3rem
+            );
+
+        line-height: 1.05;
+
+    }
+
+    .sectionHeading span {
+
+        font-size: 0.95rem;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* Work */
+
+    #work {
+
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+    }
+
+    .workGrid {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+    .featuredProject {
+
+        min-height: 430px;
+
+        border-radius: 20px;
+
+    }
+
+    .sideProjects {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+    .projectCard {
+
+        min-height: 330px;
+
+        border-radius: 20px;
+
+    }
+
+    .projectContent {
+
+        padding: 24px;
+
+    }
+
+    .projectContent h3 {
+
+        font-size: 1.6rem;
+
+    }
+
+    .projectContent p {
+
+        font-size: 0.9rem;
+
+        line-height: 1.6;
+
+    }
+
+    .playButton {
+
+        width: 56px;
+
+        height: 56px;
+
+        font-size: 16px;
+
+    }
+
+
+    /* Stats / more projects */
+
+    .stats {
+
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    .statsGrid {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+    .statCard {
+
+        min-height: 170px;
+
+    }
+
+
+    /* Services */
+
+    #services {
+
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+    }
+
+    .servicesGrid {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+    .serviceCard {
+
+        padding: 28px;
+
+        border-radius: 18px;
+
+    }
+
+    .serviceCard h3 {
+
+        font-size: 1.35rem;
+
+    }
+
+    .serviceCard p {
+
+        font-size: 0.92rem;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* Process */
+
+    #process {
+
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+    }
+
+    .timeline {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-top: 40px;
+
+    }
+
+    .timelineItem {
+
+        padding: 28px;
+
+        border-radius: 18px;
+
+    }
+
+    .timelineItem span {
+
+        font-size: 2.2rem;
+
+    }
+
+
+    /* About */
+
+    #about {
+
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+    }
+
+    .aboutContent {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+    .aboutLeft h2 {
+
+        font-size:
+            clamp(
+                2.2rem,
+                10vw,
+                3.2rem
+            );
+
+    }
+
+    .aboutLeft p {
+
+        font-size: 0.95rem;
+
+        line-height: 1.8;
+
+    }
+
+    .aboutCard {
+
+        padding: 30px;
+
+        border-radius: 20px;
+
+    }
+
+
+    /* Contact */
+
+    #contact {
+
+        padding-top: 70px;
+        padding-bottom: 70px;
+
+    }
+
+    .contactBox {
+
+        padding:
+            50px
+            20px;
+
+        border-radius: 24px;
+
+    }
+
+    .contactBox h2 {
+
+        font-size:
+            clamp(
+                2rem,
+                9vw,
+                3rem
+            );
+
+        line-height: 1.05;
+
+    }
+
+    .contactBox span {
+
+        font-size: 0.95rem;
+
+        line-height: 1.7;
+
+    }
+
+    .contactButtons {
+
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 12px;
+
+    }
+
+    .contactButtons a {
+
+        width: 100%;
+
+        min-height: 52px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+    }
+
+
+    /* Footer */
+
+    .footer {
+
+        padding:
+            60px
+            20px
+            30px;
+
+    }
+
+    .footerTop {
+
+        display: flex;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 40px;
+
+    }
+
+    .footerBrand p {
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .footerLinks a {
+
+        padding: 5px;
+
+    }
+
+    .footerBottom {
+
+        margin-top: 40px;
+
+    }
+
+}
+
+
+/* =========================================================
+   10. SMALL PHONES
+   480px AND BELOW
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+
+        padding-top: 90px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 2.75rem;
+
+    }
+
+    .heroText {
+
+        font-size: 0.92rem;
+
+    }
+
+    .featuredProject {
+
+        min-height: 370px;
+
+    }
+
+    .projectCard {
+
+        min-height: 290px;
+
+    }
+
+    .projectContent {
+
+        padding: 20px;
+
+    }
+
+    .projectContent h3 {
+
+        font-size: 1.4rem;
+
+    }
+
+    .serviceCard {
+
+        padding: 24px;
+
+    }
+
+    .timelineItem {
+
+        padding: 24px;
+
+    }
+
+    .contactBox {
+
+        padding:
+            45px
+            18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   11. ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   12. MOBILE TOUCH EXPERIENCE
+========================================================= */
+
+@media (hover: none) {
+
+    .featuredProject:hover img,
+    .projectCard:hover img {
+
+        transform: none;
+
+    }
+
+    .featuredProject:hover .playButton,
+    .projectCard:hover .playButton {
+
+        transform:
+            translate(-50%, -50%);
+
+    }
+
+    .serviceCard:hover,
+    .timelineItem:hover,
+    .statCard:hover {
+
+        transform: none;
+
+    }
+
+}
+
+
+/* =========================================================
+   END OF RESPONSIVE UPGRADE
+========================================================= */
+
+
